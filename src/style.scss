@@ -1,0 +1,311 @@
+$global-max-width: 1200px;
+$primary-blue: #222831;
+$primary-red: #dc3545;
+
+$header1-size: 48px;
+$header2-size: 30px;
+$header3-size: 24px;
+$header4-size: 18px;
+$header5-size: 14px;
+
+$pc-l-media:1200px;
+$pcs-l-media:1199px;
+$pc-media:992px;
+$pcs-media:991px;
+$pad-media:768px;
+$pads-media:767px;
+$phone-media:576px;
+$phones-media:575px;
+
+
+@mixin pcl-width() {
+  // xl
+  @media all and (min-width: $pc-l-media) {
+    @content;
+  }
+}
+@mixin pc-width() {
+  // lg
+  @media all and (min-width: $pc-media)  {
+    @content;
+  }
+}
+@mixin padl-width() {
+  // md
+  @media all and (min-width: $pad-media)  {
+    @content;
+  }
+}
+@mixin pad-width() {
+  // sm
+  @media all and (min-width: $phone-media) {
+    @content;
+  }
+}
+@mixin phone-width() {
+  // xs
+  @media all and (max-width: $phone-media) {
+    @content;
+  }
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: 'Comfortaa','微軟正黑體','Noto Serif JP','Noto Sans TC',sans-serif;
+
+  font-weight: 400;
+}
+
+.max-1200 {
+  width: 100%;
+  max-width: $global-max-width;
+}
+
+
+
+.p-title{
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  z-index:5;
+  color: black;
+  padding-top: 5px;
+  padding-left: 30px;
+}
+
+.p-description{
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  z-index:5;
+  color: black;
+  padding-left: 10px;
+}
+
+
+
+
+
+// 內容開始
+
+
+
+// nav
+.header {
+  padding: 16px 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: -webkit-linear-gradient(rgba(56, 56, 56, 0.5),rgba(224, 224, 224 , 0));
+  @include pc-width {
+      width: 100%;
+    }
+  
+  
+//   &.mobile {
+//     position: fixed;
+//     padding-top: 5%;
+//     display: block;
+//     // background: white;
+//     height: 80px;
+//     overflow: hidden;
+//     transition: all 0.3s;
+//     @include pc-width {
+//       display: none;
+//     }
+    
+//     &.open {
+//       height: 440px;
+//     }
+    
+//     .main-menu {
+//       margin-top: 40px;
+      
+//       .main-navigation {
+//         max-width: $global-max-width;
+//         margin: auto;
+//         background: black;
+//         opacity:50%;
+//       }
+      
+//       .main-navigation ul {
+//         list-style: none;
+//         margin: 0;
+        
+//         li {
+//           padding: 8px 8px;
+//           border-bottom: 1px solid white;
+          
+//           a {
+//             margin-left: 16px;
+//             color: white;
+//             font-size: 12px;
+//             font-weight: bold;
+//             transition: all 0.2s;
+//             display: block;
+//             text-decoration: none;
+//           }
+          
+//           &:hover {
+//             a {
+//               color: white;
+//               transform: translateX(8px);
+//             }
+//           }
+//         }
+//       }
+//     }
+    
+//     .menu-icon {
+//       left: 8px;
+//       width: 32px;
+//       height: 27px;
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: space-between;
+      
+//       .menu-line {
+//         width: 100%;
+//         height: 3px;
+//         background: white;
+//         border-radius: 1px;
+//         display: block;
+//         transition: all 0.2s;
+//       }
+      
+//       &.close-icon {
+//         span:nth-child(1) {
+//           transform: translateY(12px) rotate(45deg);
+//         }
+//         span:nth-child(2) {
+//           display: none;
+//         }
+//         span:nth-child(3) {
+//           transform: translateY(-12px) rotate(-45deg);
+//         }
+//       }
+//     }
+    
+//   }
+  
+  // &.web {
+  //   display: none;
+  //   @include pc-width {
+  //     display: block;
+  //   }
+    
+    .logo{
+      height: 66px;
+      position: absolute;
+    }
+    
+  .fa-search{
+    padding-top: 10px;
+    color: white;
+    display:flex;
+    position: absolute;
+  }
+    .main-navigation ul {
+      display: flex;
+      // padding-right: 10%;
+      padding-left: 20%;
+      // right: 0;
+      // justify-content: space-between;
+      list-style: none;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .main-navigation ul li a {
+      color: white;
+      text-shadow: -0px -0px white, 0.5px 0.5px grey;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    
+
+    .nav-link:after{
+      content:'';
+      position: absolute;
+      left:50%;
+      bottom:0;
+      transform:translate(-50%, 0);
+      width:0px;
+      height:2px;
+      background:white;
+      transition: all 0.3s;
+    }
+
+
+    .nav-link:hover:after {
+      width:70%;
+    }
+
+  // }
+}
+// nav
+
+
+
+
+ 
+
+
+.bg{
+  height: 100%;
+  width: 100%;
+  .people{
+    // background-image: url(https://imgur.com/jlwkere.png);
+    // background: blue;
+    position: absolute;
+    // height: 50%;
+    width: 100%;
+    // width: 700px;
+    z-index: 2;
+    bottom: 0;
+    // -webkit-filter: drop-shadow(2px 0px 1px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(2px 0px 1px rgba(0, 0, 0, 0.2))
+  }
+  
+  .d-block{
+    height: 650px;
+    width: 100%;
+    // background-size: cover;
+    background-repeat: no-repeat;
+    // background-position: 0;
+    object-fit: cover;
+  }
+  
+  .social-group{
+    color: white;
+    position: absolute;
+    top: 35%;
+    padding-left: 2%;
+    
+    li{
+      list-style-type: none;
+      // padding: 30%;
+      padding: 15px;
+    }
+  }
+  
+}
+
+
+
+
+// 第二頁
+.intro{
+  height: 100px;
+  width: 100%;
+  .bg{
+    background-color: black;
+  }
+}
